@@ -62,8 +62,6 @@ class SiteBuilder:
 			source_static_path = self._get_source_path( source )
 			result_static_path = self._get_source_path( result )
 
-			print "##source_static_path={0}".format( source_static_path )
-
 			if path.exists( source_static_path ):			
 				if self._is_js_extention( source ):
 					with open( source_static_path, 'r' ) as f:
@@ -71,16 +69,13 @@ class SiteBuilder:
 					min_source_content = jsmin( source_content )
 					with open( source_static_path, 'w' ) as f:
 						f.write( min_source_content )
-				print "##rename( {source_static_path}, {result_static_path} )".format( source_static_path = source_static_path, result_static_path = result_static_path )
-
 				rename( source_static_path, result_static_path )
+			else:
+				print "[warning] File not found: {0}".format( source_static_path )
 
 		self._call( self._stop_commands )
 		SiteBuilder.rm( self._result_dir )
 		copytree( self._source_dir, self._result_dir )
-
-		print "copytree( source_dir='{source_dir}', result_dir='{result_dir}'".format(	source_dir = self._source_dir,
-																						result_dir = self._result_dir )
 
 		self._call( self._start_commands )
 			
