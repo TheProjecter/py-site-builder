@@ -17,6 +17,7 @@ class SiteBuilder:
 					'stop_commands',
 					'start_commands',
 					'salt_path',
+					'additional_replaces',
 					)
 
 	def __init__( self, **params ):
@@ -47,6 +48,15 @@ class SiteBuilder:
 	def _get_source_path( self, source ):
 		return self._source_dir + source
 
+	def _replace_in_file( self, path, source, result ):
+
+		replace_path = self._source_dir + path
+
+		with open( replace_path, 'r' ) as f:
+			content = f.read()
+		with open( replace_path, 'w' ) as f:
+			f.write( content.replace( source, result ) )					
+
 	def build( self ):
 
 		SiteBuilder.rm_and_mk( self._source_dir )
@@ -72,6 +82,10 @@ class SiteBuilder:
 				rename( source_static_path, result_static_path )
 			else:
 				print "[warning] File not found: {0}".format( source_static_path )
+
+		for replace_path, replace_fragments in self._additional_replaces.iteritems():
+			self._replace_in_file( replace_path, replace_fragments[ 0 ], replace_fragments[ 1 ] )
+			
 
 		self._call( self._stop_commands )
 		SiteBuilder.rm( self._result_dir )
