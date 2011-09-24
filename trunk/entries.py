@@ -42,7 +42,7 @@ class Replacer:
 
 				for extention in extentions:
 
-					search_result = re.search( "/*([/0-9\w]*/)*(\w[0-9\w]*)\." + extention, line )
+					search_result = re.search( "/*([/0-9\-\w\.]*/)*(\w[\-0-9\.\w]*)\." + extention, line )
 				
 					if search_result != None:
 
@@ -78,7 +78,4 @@ class Replacer:
 			f.write( output )
 
 		return replacements
-
-if __name__ == "__main__":
-	print repr( Replacer.md5_replace_in_file( "C:/Users/Serg/Desktop/all/temp/html/index.html", ( "js", "css", ), 23 ) )
 	
