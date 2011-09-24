@@ -7,6 +7,9 @@ config = {	'html_extentions': ( "tmpl", ),
 			'stop_commands': "/etc/init.d/apache2 stop; /usr/local/nginx/sbin/nginx -s stop",
 			'start_commands': "/usr/local/nginx/sbin/nginx; /etc/init.d/apache2 start",
 			'salt_path': './salt',
+			'additional_replaces':	{
+										'settings.py': ( "localhost", "mosdargent.ru" )
+									}
 		}	
 
 
