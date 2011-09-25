@@ -1,0 +1,12 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Add your content here.
+
+
+= Features =
+
+  * downloading source code of your project from a repository
+  * rename static data (for example css/js) to resolve _browser cache problem_ (renew these file names each time after building) 
+  * custom minimization of _javascript_ and _html_ files 
