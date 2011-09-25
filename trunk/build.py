@@ -1,4 +1,3 @@
-
 from sitebuilder import SiteBuilder
 from config import config
 
