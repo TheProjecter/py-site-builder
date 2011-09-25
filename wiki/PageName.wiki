@@ -4,6 +4,7 @@ This is simple python-based builder for a site.
 
 = Features =
 
+  * Getting _source code_ from a repository
   * downloading source code of your project from a repository
   * rename static data (for example css/js) to resolve _browser cache problem_ (renew these file names each time after building) 
   * custom minimization of _javascript_ and _html_ files 
