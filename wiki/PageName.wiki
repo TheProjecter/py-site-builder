@@ -1,9 +1,6 @@
-#summary This is simple python-based builder for a site.
+= Short Description =
 
-= Introduction =
-
-Add your content here.
-
+This is simple python-based builder for a site.
 
 = Features =
 
