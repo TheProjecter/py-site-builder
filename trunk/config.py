@@ -1,4 +1,4 @@
-configs = 
+configs = \
 {
 	'dargent-ru':	{	'html_extentions': ( "html", ), 
 						'js_extentions': ( "js", ), 
