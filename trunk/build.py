@@ -1,5 +1,5 @@
 from sitebuilder import SiteBuilder
-from config import config
+from configs import configs
 from sys import argv
 
 if __name__ == "__main__":
